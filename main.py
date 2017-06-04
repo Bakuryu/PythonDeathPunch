@@ -19,7 +19,7 @@ def main():
             cv2.destroyAllWindows()
             break
 
-        enemyview,enemies = findEnemies(printscreen,bbox,player_x,player_y,cv2.getTrackbarPos('Param 1', 'Control'),cv2.getTrackbarPos('Param 2', 'Control'),cv2.getTrackbarPos('Param 3', 'Control'),cv2.getTrackbarPos('Param 4', 'Control'))
+        enemyview,enemies = findEnemies(printscreen,bbox,player_x)
 
         #Debug center of screen
         #cv2.circle(printscreen,(391,211),4,(255,0,0),4)
