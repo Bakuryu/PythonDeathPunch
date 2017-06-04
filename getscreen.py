@@ -41,6 +41,11 @@ def get_screen(windowName):
 
         img.shape = (h - 48, w - 18, 4)
 
+        dcObj.DeleteDC()
+        cDC.DeleteDC()
+        win32gui.ReleaseDC(hwnd, wDC)
+        win32gui.DeleteObject(dataBitMap.GetHandle())
+
         return img, win32gui.GetWindowRect(hwnd)
     except pywintypes.error:
         return

@@ -4,10 +4,12 @@ import numpy as np
 def roi(img, vertices):
     #blank mask:
     mask = np.zeros_like(img)
-    # fill the mask
-    cv2.fillPoly(mask, vertices, (255,255,255))
-    # now only show the area that is the mask
-    masked = cv2.bitwise_and(img, mask)
+
+    for vert in vertices:
+        # fill the mask
+        cv2.fillPoly(mask, vert, (255,255,255))
+        # now only show the area that is the mask
+        masked = cv2.bitwise_and(img, mask)
     return masked
 
 def process_img(original_image, low_threshold, high_threshold,vertices):
